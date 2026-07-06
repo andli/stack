@@ -1,34 +1,37 @@
 # Profile: Sorcery: Contested Realm
 
-Status: draft, set codes and id namespaces need pinning against Curiosa
+Status: draft
 
 | Item     | Value |
 |----------|-------|
 | `game`   | `sorcery` |
-| Database | [Curiosa](https://curiosa.io/) (official) |
+| Database | [Curiosa](https://curiosa.io/) (official), API at `api.sorcerytcg.com` |
 
 ## Fields
 
-- `name`: the card name as in Curiosa.
-- `set`: lowercase set identifier, e.g. `"alpha"`, `"beta"`,
-  `"arthurian_legends"`. Exact tokens to be pinned against Curiosa.
-- `number`: collector number within the set, where the set has them.
+- `name`: the card name as in Curiosa, e.g. `"Apprentice Wizard"`.
+- `set`: lowercase set code as used in Curiosa variant slugs, e.g. `"alp"`
+  (Alpha), `"bet"` (Beta).
+- `number`: not used. Sorcery cards have no collector numbers; a printing is
+  identified by set, product and finish. For exact printing identity use the
+  `curiosa` id namespace.
 
 ## `id` namespaces
 
 | Namespace    | Value |
 |--------------|-------|
-| `curiosa`    | Curiosa card identifier |
+| `curiosa`    | Curiosa variant slug, e.g. `"alp-apprentice_wizard-b-s"` (encodes set, card, product, finish) |
 | `cardmarket` | Cardmarket product id |
 | `tcgplayer`  | TCGplayer product id |
 
 ## `finish` values
 
-`nonfoil` (default), `foil`.
+`standard` (default), `foil`, matching Curiosa's finish enumeration.
 
 ## Open
 
-Sorcery distinguishes product variants (e.g. Kickstarter/preconstructed
-printings) and card rarity (Ordinary, Exceptional, Elite, Unique) that may or
-may not be printing-identifying. Input from Sorcery collectors on what
-uniquely identifies a printing is needed before this profile leaves draft.
+The same card, set and finish can exist in several products (Booster,
+Welcome Kit, Preconstructed). Without collector numbers, the human-readable
+fields cannot distinguish those printings; only the `curiosa` slug can.
+Whether product deserves a spec-level or profile-level field is an open
+question for Sorcery collectors.
