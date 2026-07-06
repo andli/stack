@@ -46,6 +46,7 @@ Read the spec: [SPEC.md](SPEC.md)
   for any TCG. [Profiles](profiles/) pin what names, set codes and id
   namespaces mean per game: [MTG](profiles/mtg.md),
   [Pokemon](profiles/pokemon.md), [Sorcery](profiles/sorcery.md).
+  Want a profile for your game? [Here is how to propose one](profiles/README.md).
 - **Minimal.** Two required fields per card. Extensions are additive.
 
 ## Why JSON and not CSV?
