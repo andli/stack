@@ -30,3 +30,10 @@ Status: draft
 ## `finish` values
 
 `nonfoil` (default), `foil`, `etched`.
+
+These match Scryfall's finish enumeration. Special foil treatments (surge,
+galaxy, rainbow, textured, halo, confetti, oil slick, gilded, ...) are
+deliberately not finish tokens: Scryfall gives those printings their own
+collector numbers, so they are identified by `set` plus `number` and carry
+`finish: "foil"`. This keeps the enumeration closed instead of chasing every
+new treatment Wizards invents.

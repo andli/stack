@@ -21,8 +21,17 @@ Status: draft, seeking review from Yu-Gi-Oh! domain experts
 | `konami`     | Konami database card id |
 | `cardmarket` | Cardmarket product id |
 
+## `finish` values
+
+Proposed: rarity tokens, since in Yu-Gi-Oh! the rarity IS the surface
+treatment and the same card code can exist in several rarities. `common`
+(default), `rare`, `super_rare`, `ultra_rare`, `secret_rare`,
+`ultimate_rare`, `ghost_rare`, `starlight_rare`,
+`quarter_century_secret_rare`.
+
 ## Open
 
-Rarity is part of printing identity in Yu-Gi-Oh! (the same card code can exist
-in several rarities). Whether rarity belongs in `finish`, in a new field, or in
-this profile only, is an open question.
+Whether rarity-as-finish (above) is the right model, or rarity deserves its
+own field, is an open question. Unlike MTG and Pokemon, rarity variants in
+Yu-Gi-Oh! share the same card code, so `set` plus `number` cannot
+distinguish them.

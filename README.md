@@ -49,7 +49,8 @@ Read the spec: [SPEC.md](SPEC.md)
 - **Game-agnostic core, per-game profiles.** The envelope and card fields work
   for any TCG. [Profiles](profiles/) pin what names, set codes and id
   namespaces mean per game: [MTG](profiles/mtg.md),
-  [Pokemon](profiles/pokemon.md), [Yu-Gi-Oh!](profiles/yugioh.md).
+  [Pokemon](profiles/pokemon.md), [Yu-Gi-Oh!](profiles/yugioh.md),
+  [Sorcery](profiles/sorcery.md).
 - **Minimal.** Two required fields per card. Extensions are additive.
 
 ## Why JSON and not CSV?
