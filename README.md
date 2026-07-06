@@ -7,17 +7,13 @@ requested via [issues](../../issues).
 
 ## The problem
 
-Every collection site, deck builder and marketplace exports card lists in its
-own CSV or text dialect. Column names differ, data types are loose, and
-importing a list from one site into another is a guessing game that regularly
-fails or silently drops data.
+Every collection site, deck builder app and marketplace exports card lists in its own CSV or text dialect. Column names differ, data types are loose, and importing a list from one site into another is a guessing game that regularly fails or silently drops data.
+
+And this is not a rare migration event. Card lists move constantly: wishlists go to marketplaces to be bought, decklists travel between builders and playgroups, trade lists and buylists change hands, purchases land back in collection trackers. Every one of those hops crosses a dialect boundary today.
 
 ## The proposal
 
-One small JSON format with fixed field names and strict types, validated by a
-published [JSON Schema](schema/stack.schema.json). If a file is valid, an
-import will succeed. That is the whole promise, and the schema is what makes
-it enforceable.
+One small JSON format with fixed field names and strict types, validated by a published [JSON Schema](schema/stack.schema.json). If a file is valid, an import will succeed. That is the whole promise, and the schema is what makes it work universally.
 
 ```json
 {
@@ -65,10 +61,7 @@ developers at sites and app makers, and every one of their stacks already
 speaks JSON. For site-to-site transfer, end users never open the file; they
 download from one site and upload to another.
 
-Spreadsheets are the honest exception. Many people manage collections in
-Excel or Google Sheets, and neither imports JSON comfortably. That does not
-change the interchange format, but it is a real workflow to serve: see open
-question 5 on a defined CSV projection.
+Spreadsheets are the honest exception. Many people manage collections in Excel or Google Sheets, and neither imports JSON comfortably. That does not change the interchange format, but it is a real workflow to serve: see open question 5 on a defined CSV projection.
 
 ## Non-goals
 

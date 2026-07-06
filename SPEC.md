@@ -98,6 +98,11 @@ The core format is game-agnostic. A profile pins, for one game:
 - the recognized `id` namespaces,
 - the recommended `finish` values.
 
+A profile MAY make its database normative: exporters claiming conformance
+for that game MUST then use the database's names, codes and tokens for the
+fields the profile pins. This makes files checkable against the actual card
+catalog, not just against the schema.
+
 Profiles live in [profiles/](profiles/) and are non-breaking additions.
 A game without a profile MAY still use the format; entries then resolve by
 `name` on a best-effort basis.

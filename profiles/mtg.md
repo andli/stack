@@ -5,7 +5,22 @@ Status: draft
 | Item     | Value |
 |----------|-------|
 | `game`   | `mtg` |
-| Database | [Scryfall](https://scryfall.com/docs/api) |
+| Database | [Scryfall](https://scryfall.com/docs/api) (normative) |
+
+## Conformance
+
+Scryfall is normative for this profile, not just recommended. An exporter
+emitting `game: "mtg"`:
+
+- MUST use Scryfall set codes for `set` and Scryfall collector numbers for
+  `number`.
+- MUST use the Scryfall card name for `name` whenever `set` or `number` is
+  present. Name-only entries (hand-authored lists) SHOULD use Scryfall names.
+- MUST use only the `finish` tokens listed below.
+
+Scryfall publishes free [bulk data](https://scryfall.com/docs/api/bulk-data),
+so conformance is machine-checkable: a validator can verify every entry
+against the actual card catalog, not just against the schema.
 
 ## Fields
 
