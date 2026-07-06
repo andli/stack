@@ -61,9 +61,13 @@ that break strictness.
 
 Adoption is not hurt by JSON, because the people who adopt this format are
 developers at sites and app makers, and every one of their stacks already
-speaks JSON. End users never open the file; they download from one site and
-upload to another. For users who want a spreadsheet, sites can keep their CSV
-exports alongside `.stack`.
+speaks JSON. For site-to-site transfer, end users never open the file; they
+download from one site and upload to another.
+
+Spreadsheets are the honest exception. Many people manage collections in
+Excel or Google Sheets, and neither imports JSON comfortably. That does not
+change the interchange format, but it is a real workflow to serve: see open
+question 5 on a defined CSV projection.
 
 ## Non-goals
 
@@ -94,8 +98,13 @@ Input is specifically requested on these:
 3. Yu-Gi-Oh! rarity as printing identity, see [the profile](profiles/yugioh.md).
 4. Should there be a registry of `game` tokens and `id` namespaces in this
    repo, so two sites never mint the same name for different things?
-5. A non-normative CSV column mapping for spreadsheet workflows: useful bridge
-   or scope creep?
+5. Spreadsheet access. Many people manage collections in Excel or Google
+   Sheets, and neither imports JSON comfortably. Card entries are flat, so a
+   defined CSV projection (fixed column names matching the field names,
+   `id.scryfall` flattened to `id_scryfall`) would be nearly lossless and
+   give spreadsheet users a standardized path in and out. Should the RFC
+   define this projection as a companion representation, or is JSON-only
+   with per-site CSV exports enough?
 6. Media type registration, e.g. `application/x.stack+json`.
 
 ## Validating a file
