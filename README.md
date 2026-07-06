@@ -78,8 +78,12 @@ exports alongside `.stack`.
 
 Input is specifically requested on these:
 
-1. Should a purchase/acquisition price field exist? (Collections track it,
-   marketplaces export it, but currencies and price kinds add surface.)
+1. Prices. This will come up. Collections track acquisition price,
+   marketplaces export listing prices, and users will ask for it. But price
+   data drags in currency codes, price kinds (paid, ask, market, trend),
+   timestamps (a price without a date is noise) and a maintenance burden that
+   card identity does not have. Should v1 define a price field, reserve a
+   shape for v1.x, or declare it permanently out of scope?
 2. Condition scale: choosing a standard here is genuinely hard. There is no
    industry-wide grading standard, scales differ per marketplace (7 grades on
    Cardmarket, 5 on TCGplayer), grading is subjective, and every mapping
