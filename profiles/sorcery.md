@@ -1,6 +1,7 @@
 # Profile: Sorcery: Contested Realm
 
 Status: draft
+Owner: andli
 
 | Item     | Value |
 |----------|-------|

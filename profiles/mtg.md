@@ -1,6 +1,7 @@
 # Profile: Magic: The Gathering
 
 Status: draft
+Owner: andli
 
 | Item     | Value |
 |----------|-------|

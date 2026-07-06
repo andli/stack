@@ -1,6 +1,7 @@
 # Profile: Pokemon TCG
 
 Status: draft, seeking review from Pokemon TCG domain experts
+Owner: wanted
 
 | Item     | Value |
 |----------|-------|
