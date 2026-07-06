@@ -45,8 +45,7 @@ Read the spec: [SPEC.md](SPEC.md)
 - **Game-agnostic core, per-game profiles.** The envelope and card fields work
   for any TCG. [Profiles](profiles/) pin what names, set codes and id
   namespaces mean per game: [MTG](profiles/mtg.md),
-  [Pokemon](profiles/pokemon.md), [Yu-Gi-Oh!](profiles/yugioh.md),
-  [Sorcery](profiles/sorcery.md).
+  [Pokemon](profiles/pokemon.md), [Sorcery](profiles/sorcery.md).
 - **Minimal.** Two required fields per card. Extensions are additive.
 
 ## Why JSON and not CSV?
@@ -75,35 +74,38 @@ Spreadsheets are the honest exception. Many people manage collections in Excel o
 ## Open questions
 
 Input is specifically requested on these. Each has a seeded issue, discuss
-there: [#1](../../issues/1) [#2](../../issues/2) [#3](../../issues/3)
-[#4](../../issues/4) [#5](../../issues/5) [#6](../../issues/6), plus
-game-specific questions in [#7](../../issues/7) (Pokemon editions) and
-[#8](../../issues/8) (Sorcery printings).
+there.
 
-1. Prices. This will come up. Collections track acquisition price,
-   marketplaces export listing prices, and users will ask for it. But price
-   data drags in currency codes, price kinds (paid, ask, market, trend),
-   timestamps (a price without a date is noise) and a maintenance burden that
-   card identity does not have. Should v1 define a price field, reserve a
-   shape for v1.x, or declare it permanently out of scope?
-2. Condition scale: choosing a standard here is genuinely hard. There is no
-   industry-wide grading standard, scales differ per marketplace (7 grades on
-   Cardmarket, 5 on TCGplayer), grading is subjective, and every mapping
-   between scales is lossy. v1 picks the 7-grade scale since a finer scale can
-   represent a coarser one, but this is the most contested field in the spec.
-   Should the spec define the mapping from the 5-grade scale
-   (NM/LP/MP/HP/DMG), leave it to exporters, or drop `condition` entirely?
-3. Yu-Gi-Oh! rarity as printing identity, see [the profile](profiles/yugioh.md).
-4. Should there be a registry of `game` tokens and `id` namespaces in this
-   repo, so two sites never mint the same name for different things?
-5. Spreadsheet access. Many people manage collections in Excel or Google
-   Sheets, and neither imports JSON comfortably. Card entries are flat, so a
-   defined CSV projection (fixed column names matching the field names,
-   `id.scryfall` flattened to `id_scryfall`) would be nearly lossless and
-   give spreadsheet users a standardized path in and out. Should the RFC
-   define this projection as a companion representation, or is JSON-only
-   with per-site CSV exports enough?
-6. Media type registration, e.g. `application/x.stack+json`.
+- Prices ([#1](../../issues/1)). This will come up. Collections track
+  acquisition price, marketplaces export listing prices, and users will ask
+  for it. But price data drags in currency codes, price kinds (paid, ask,
+  market, trend), timestamps (a price without a date is noise) and a
+  maintenance burden that card identity does not have. Should v1 define a
+  price field, reserve a shape for v1.x, or declare it permanently out of
+  scope?
+- Condition scale ([#2](../../issues/2)): choosing a standard here is
+  genuinely hard. There is no industry-wide grading standard, scales differ
+  per marketplace (7 grades on Cardmarket, 5 on TCGplayer), grading is
+  subjective, and every mapping between scales is lossy. v1 picks the 7-grade
+  scale since a finer scale can represent a coarser one, but this is the most
+  contested field in the spec. Should the spec define the mapping from the
+  5-grade scale (NM/LP/MP/HP/DMG), leave it to exporters, or drop `condition`
+  entirely?
+- Should there be a registry of `game` tokens and `id` namespaces in this
+  repo, so two sites never mint the same name for different things?
+  ([#4](../../issues/4))
+- Spreadsheet access ([#5](../../issues/5)). Many people manage collections
+  in Excel or Google Sheets, and neither imports JSON comfortably. Card
+  entries are flat, so a defined CSV projection (fixed column names matching
+  the field names, `id.scryfall` flattened to `id_scryfall`) would be nearly
+  lossless and give spreadsheet users a standardized path in and out. Should
+  the RFC define this projection as a companion representation, or is
+  JSON-only with per-site CSV exports enough?
+- Media type registration, e.g. `application/x.stack+json`.
+  ([#6](../../issues/6))
+- Game-specific: Pokemon edition stamps ([#7](../../issues/7)), Sorcery
+  printing identity ([#8](../../issues/8)), and a Yu-Gi-Oh! profile needs a
+  domain expert owner ([#3](../../issues/3)).
 
 ## Validating a file
 
@@ -118,8 +120,7 @@ npx ajv-cli validate --spec=draft2020 -s schema/stack.schema.json -d examples/mi
 See [examples/](examples/): [minimal](examples/minimal.stack),
 [collection with ids and conditions](examples/mtg-collection.stack),
 [deck with groups](examples/mtg-deck.stack), and one per profile:
-[Pokemon](examples/pokemon.stack), [Yu-Gi-Oh!](examples/yugioh.stack),
-[Sorcery](examples/sorcery.stack).
+[Pokemon](examples/pokemon.stack), [Sorcery](examples/sorcery.stack).
 
 ## Adopters
 
