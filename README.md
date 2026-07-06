@@ -127,7 +127,9 @@ See [examples/](examples/): [minimal](examples/minimal.stack),
 
 Sites and apps that import and/or export `.stack`:
 
-- None yet. This is an RFC.
+- [paperrectangles.eu](https://paperrectangles.eu) (EU TCG marketplace):
+  imports `.stack` for collection, inventory, bids and wishlists; exports
+  collection, inventory and wishlists. Reference implementation.
 
 Adopted the format? Open a PR adding your site or app to this list, stating
 what you import and export.
