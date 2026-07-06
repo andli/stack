@@ -74,7 +74,11 @@ Spreadsheets are the honest exception. Many people manage collections in Excel o
 
 ## Open questions
 
-Input is specifically requested on these:
+Input is specifically requested on these. Each has a seeded issue, discuss
+there: [#1](../../issues/1) [#2](../../issues/2) [#3](../../issues/3)
+[#4](../../issues/4) [#5](../../issues/5) [#6](../../issues/6), plus
+game-specific questions in [#7](../../issues/7) (Pokemon editions) and
+[#8](../../issues/8) (Sorcery printings).
 
 1. Prices. This will come up. Collections track acquisition price,
    marketplaces export listing prices, and users will ask for it. But price
