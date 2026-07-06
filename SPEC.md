@@ -44,6 +44,13 @@ in [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119).
 The same card MAY appear in multiple entries, e.g. to express different
 conditions or finishes of the same printing.
 
+Note on `condition`: there is no industry-wide grading standard. Marketplaces
+use different scales (Cardmarket uses 7 grades, TCGplayer uses 5) and grading
+is subjective. This spec picks the 7-grade scale as the wire format because a
+finer scale can represent a coarser one, but any mapping between scales is
+lossy and contested. Exporters mapping from another scale SHOULD map
+conservatively (downward). This choice is explicitly open for review.
+
 ## Conformance
 
 An exporter:

@@ -76,9 +76,13 @@ Input is specifically requested on these:
 
 1. Should a purchase/acquisition price field exist? (Collections track it,
    marketplaces export it, but currencies and price kinds add surface.)
-2. Condition scale: v1 uses the 7-grade scale (Cardmarket-style). Is a
-   defined mapping from the US 5-grade scale (NM/LP/MP/HP/DMG) needed in the
-   spec, or left to exporters?
+2. Condition scale: choosing a standard here is genuinely hard. There is no
+   industry-wide grading standard, scales differ per marketplace (7 grades on
+   Cardmarket, 5 on TCGplayer), grading is subjective, and every mapping
+   between scales is lossy. v1 picks the 7-grade scale since a finer scale can
+   represent a coarser one, but this is the most contested field in the spec.
+   Should the spec define the mapping from the 5-grade scale
+   (NM/LP/MP/HP/DMG), leave it to exporters, or drop `condition` entirely?
 3. Yu-Gi-Oh! rarity as printing identity, see [the profile](profiles/yugioh.md).
 4. Should there be a registry of `game` tokens and `id` namespaces in this
    repo, so two sites never mint the same name for different things?
