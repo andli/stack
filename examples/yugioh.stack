@@ -1,0 +1,18 @@
+{
+  "stack": "1.0",
+  "game": "yugioh",
+  "name": "Dragon binder",
+  "cards": [
+    {
+      "qty": 1,
+      "name": "Blue-Eyes White Dragon",
+      "set": "LOB",
+      "set_name": "Legend of Blue Eyes White Dragon",
+      "number": "EN001",
+      "finish": "ultra_rare",
+      "condition": "excellent",
+      "id": { "passcode": "89631139" }
+    },
+    { "qty": 2, "name": "Blue-Eyes White Dragon", "set": "SDK", "set_name": "Starter Deck: Kaiba", "number": "001", "finish": "ultra_rare" }
+  ]
+}

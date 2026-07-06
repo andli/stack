@@ -110,15 +110,25 @@ game-specific questions in [#7](../../issues/7) (Pokemon editions) and
 Any JSON Schema validator works, e.g.:
 
 ```sh
-npx ajv-cli validate -s schema/stack.schema.json -d examples/minimal.stack
+npx ajv-cli validate --spec=draft2020 -s schema/stack.schema.json -d examples/minimal.stack
 ```
 
 ## Examples
 
 See [examples/](examples/): [minimal](examples/minimal.stack),
 [collection with ids and conditions](examples/mtg-collection.stack),
-[deck with groups](examples/mtg-deck.stack),
-[another game](examples/pokemon.stack).
+[deck with groups](examples/mtg-deck.stack), and one per profile:
+[Pokemon](examples/pokemon.stack), [Yu-Gi-Oh!](examples/yugioh.stack),
+[Sorcery](examples/sorcery.stack).
+
+## Adopters
+
+Sites and apps that import and/or export `.stack`:
+
+- None yet. This is an RFC.
+
+Adopted the format? Open a PR adding your site or app to this list, stating
+what you import and export.
 
 ## License
 

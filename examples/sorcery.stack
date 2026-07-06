@@ -1,0 +1,16 @@
+{
+  "stack": "1.0",
+  "game": "sorcery",
+  "name": "Alpha pulls",
+  "cards": [
+    {
+      "qty": 3,
+      "name": "Apprentice Wizard",
+      "set": "alp",
+      "set_name": "Alpha",
+      "finish": "standard",
+      "id": { "curiosa": "alp-apprentice_wizard-b-s" }
+    },
+    { "qty": 1, "name": "Apprentice Wizard", "set": "bet", "set_name": "Beta", "finish": "foil" }
+  ]
+}

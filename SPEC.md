@@ -38,7 +38,7 @@ in [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119).
 | `number`    | string  | no       | Collector number within the set. String, because numbers like `"234a"` exist. |
 | `id`        | object  | no       | External identifiers, as supplementary machine hints only. Keys are lowercase namespace names, values are strings. Example: `{"scryfall": "f2ab…", "cardmarket": "265535"}`. |
 | `finish`    | string  | no       | Lowercase token. Recommended values are listed per game profile, e.g. `foil`. Absent means the default finish. |
-| `lang`      | string  | no       | ISO 639-1 language code, lowercase, e.g. `"en"`, `"ja"`. Absent means `"en"`. |
+| `lang`      | string  | no       | ISO 639 language code, lowercase, optionally with a subtag, e.g. `"en"`, `"ja"`, `"zh-hans"`. Absent means `"en"`. |
 | `condition` | string  | no       | One of `mint`, `near_mint`, `excellent`, `good`, `light_played`, `played`, `poor`. Absent means unspecified. |
 | `group`     | string  | no       | Free-text grouping label, e.g. `"main"`, `"sideboard"`, `"Binder A"`. Absent means ungrouped. |
 
