@@ -9,6 +9,7 @@
       "qty": 1,
       "name": "Ragavan, Nimble Pilferer",
       "set": "mh2",
+      "set_name": "Modern Horizons 2",
       "number": "138",
       "finish": "foil",
       "lang": "en",
@@ -22,6 +23,7 @@
       "qty": 3,
       "name": "Ragavan, Nimble Pilferer",
       "set": "mh2",
+      "set_name": "Modern Horizons 2",
       "number": "138",
       "lang": "ja",
       "condition": "excellent"
@@ -30,6 +32,7 @@
       "qty": 2,
       "name": "Fire // Ice",
       "set": "mh2",
+      "set_name": "Modern Horizons 2",
       "number": "290"
     }
   ]

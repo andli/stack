@@ -4,9 +4,31 @@
   "name": "Mono red burn",
   "description": "Example of using group for deck zones.",
   "cards": [
-    { "qty": 4, "name": "Lightning Bolt", "set": "2x2", "number": "117", "group": "main" },
-    { "qty": 4, "name": "Monastery Swiftspear", "set": "bro", "number": "144", "group": "main" },
-    { "qty": 20, "name": "Mountain", "group": "main" },
-    { "qty": 2, "name": "Smash to Smithereens", "group": "sideboard" }
+    {
+      "qty": 4,
+      "name": "Lightning Bolt",
+      "set": "2x2",
+      "set_name": "Double Masters 2022",
+      "number": "117",
+      "group": "main"
+    },
+    {
+      "qty": 4,
+      "name": "Monastery Swiftspear",
+      "set": "bro",
+      "set_name": "The Brothers' War",
+      "number": "144",
+      "group": "main"
+    },
+    {
+      "qty": 20,
+      "name": "Mountain",
+      "group": "main"
+    },
+    {
+      "qty": 2,
+      "name": "Smash to Smithereens",
+      "group": "sideboard"
+    }
   ]
 }

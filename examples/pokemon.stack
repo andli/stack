@@ -7,10 +7,19 @@
       "qty": 1,
       "name": "Pikachu",
       "set": "sv1",
+      "set_name": "Scarlet & Violet",
       "number": "25",
       "finish": "reverse_holo",
-      "id": { "pokemontcgio": "sv1-25" }
+      "id": {
+        "pokemontcgio": "sv1-25"
+      }
     },
-    { "qty": 2, "name": "Charizard ex", "set": "sv3pt5", "number": "6" }
+    {
+      "qty": 2,
+      "name": "Charizard ex",
+      "set": "sv3pt5",
+      "set_name": "151",
+      "number": "6"
+    }
   ]
 }

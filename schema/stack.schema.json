@@ -50,6 +50,10 @@
           "type": "string",
           "minLength": 1
         },
+        "set_name": {
+          "type": "string",
+          "minLength": 1
+        },
         "number": {
           "type": "string",
           "minLength": 1

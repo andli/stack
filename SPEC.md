@@ -33,7 +33,8 @@ in [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119).
 |-------------|---------|----------|-------------|
 | `qty`       | integer | yes      | Number of copies. Minimum 1. |
 | `name`      | string  | yes      | Card name as printed or as named in the game's canonical database. |
-| `set`       | string  | no       | Set or expansion code as used by the game's canonical database, e.g. `"m21"`. |
+| `set`       | string  | no       | Set or expansion code as used by the game's canonical database, e.g. `"m21"`. Authoritative for resolution. |
+| `set_name`  | string  | no       | Human-readable set name, e.g. `"Core Set 2021"`. Display and cross-check companion to `set`; resolution fallback when `set` is absent. |
 | `number`    | string  | no       | Collector number within the set. String, because numbers like `"234a"` exist. |
 | `id`        | object  | no       | External identifiers, as supplementary machine hints only. Keys are lowercase namespace names, values are strings. Example: `{"scryfall": "f2ab…", "cardmarket": "265535"}`. |
 | `finish`    | string  | no       | Lowercase token. Recommended values are listed per game profile, e.g. `foil`. Absent means the default finish. |
@@ -60,8 +61,8 @@ optional reference, never a substitute.
 An exporter:
 
 - MUST produce files that validate against the schema.
-- SHOULD include `set` and `number` when the printing is known. Name-only
-  entries are intended for hand-authored lists.
+- SHOULD include `set`, `set_name` and `number` when the printing is known.
+  Name-only entries are intended for hand-authored lists.
 - MAY add `id` values as an optional machine-readable reference.
 - MAY add fields not defined here. Custom fields MUST NOT change the meaning
   of defined fields.
@@ -80,7 +81,8 @@ An importer:
 Importers SHOULD resolve each entry to a card in this order:
 
 1. An `id` value in a namespace the importer understands (fast path).
-2. `set` and `number` (and `name` as a cross-check).
+2. `set` and `number` (and `name` as a cross-check). If `set` is absent,
+   `set_name` MAY be used in its place.
 3. `name` alone. The importer MAY pick any printing.
 
 If an `id` contradicts the human-readable fields, the human-readable fields
