@@ -35,7 +35,7 @@ in [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119).
 | `name`      | string  | yes      | Card name as printed or as named in the game's canonical database. |
 | `set`       | string  | no       | Set or expansion code as used by the game's canonical database, e.g. `"m21"`. |
 | `number`    | string  | no       | Collector number within the set. String, because numbers like `"234a"` exist. |
-| `id`        | object  | no       | External identifiers. Keys are lowercase namespace names, values are strings. Example: `{"scryfall": "f2ab…", "cardmarket": "265535"}`. |
+| `id`        | object  | no       | External identifiers, as supplementary machine hints only. Keys are lowercase namespace names, values are strings. Example: `{"scryfall": "f2ab…", "cardmarket": "265535"}`. |
 | `finish`    | string  | no       | Lowercase token. Recommended values are listed per game profile, e.g. `foil`. Absent means the default finish. |
 | `lang`      | string  | no       | ISO 639-1 language code, lowercase, e.g. `"en"`, `"ja"`. Absent means `"en"`. |
 | `condition` | string  | no       | One of `mint`, `near_mint`, `excellent`, `good`, `light_played`, `played`, `poor`. Absent means unspecified. |
@@ -53,11 +53,16 @@ conservatively (downward). This choice is explicitly open for review.
 
 ## Conformance
 
+A `.stack` file is human-readable first: every entry MUST be identifiable
+from `name` (and `set`/`number` when present) alone. External ids are an
+optional reference, never a substitute.
+
 An exporter:
 
 - MUST produce files that validate against the schema.
-- SHOULD include the most precise identity it has (`id`, then `set` plus
-  `number`, then `name` alone).
+- SHOULD include `set` and `number` when the printing is known. Name-only
+  entries are intended for hand-authored lists.
+- MAY add `id` values as an optional machine-readable reference.
 - MAY add fields not defined here. Custom fields MUST NOT change the meaning
   of defined fields.
 
@@ -74,9 +79,12 @@ An importer:
 
 Importers SHOULD resolve each entry to a card in this order:
 
-1. An `id` value in a namespace the importer understands.
+1. An `id` value in a namespace the importer understands (fast path).
 2. `set` and `number` (and `name` as a cross-check).
 3. `name` alone. The importer MAY pick any printing.
+
+If an `id` contradicts the human-readable fields, the human-readable fields
+are authoritative and the importer SHOULD flag the entry.
 
 What `name`, `set`, `number` and the `id` namespaces refer to is pinned per
 game by its profile. Matching SHOULD be case-insensitive.

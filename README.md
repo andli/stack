@@ -40,6 +40,10 @@ Read the spec: [SPEC.md](SPEC.md)
 
 - **Guaranteed import.** Validity is machine-checkable. Importers must accept
   every valid file and must ignore what they do not understand.
+- **Human-readable first.** Card name and set are the identity. External ids
+  (Scryfall, Cardmarket, ...) are an optional reference for exact printing
+  resolution, never a requirement. You can read and write a `.stack` file in
+  a text editor.
 - **Trivial to adopt.** A site that already exports CSV can emit `.stack` with
   a few dozen lines of code. No library required beyond a JSON serializer.
 - **Game-agnostic core, per-game profiles.** The envelope and card fields work
