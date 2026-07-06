@@ -130,6 +130,15 @@ Sites and apps that import and/or export `.stack`:
 Adopted the format? Open a PR adding your site or app to this list, stating
 what you import and export.
 
+## Governance
+
+While the format is an RFC, [@andli](https://github.com/andli) acts as
+editor: open questions are discussed in the issues and closed by editor
+decision, with the reasoning recorded in the issue. This is a practical
+bootstrap, not a power grab, and help governing is explicitly invited:
+if you represent a site, app or game community and want to co-maintain the
+spec or own a game profile, say so in an issue.
+
 ## License
 
 CC0 1.0 (public domain). Anyone can implement this format for any purpose
