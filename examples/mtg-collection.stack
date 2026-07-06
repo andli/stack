@@ -1,0 +1,36 @@
+{
+  "stack": "1.0",
+  "game": "mtg",
+  "name": "Trade binder",
+  "source": "example.app",
+  "created": "2026-07-06T12:00:00Z",
+  "cards": [
+    {
+      "qty": 1,
+      "name": "Ragavan, Nimble Pilferer",
+      "set": "mh2",
+      "number": "138",
+      "finish": "foil",
+      "lang": "en",
+      "condition": "near_mint",
+      "id": {
+        "scryfall": "a1da57b0-1d13-4f04-b8f8-8a8f5b9a3b1e",
+        "cardmarket": "566714"
+      }
+    },
+    {
+      "qty": 3,
+      "name": "Ragavan, Nimble Pilferer",
+      "set": "mh2",
+      "number": "138",
+      "lang": "ja",
+      "condition": "excellent"
+    },
+    {
+      "qty": 2,
+      "name": "Fire // Ice",
+      "set": "mh2",
+      "number": "290"
+    }
+  ]
+}

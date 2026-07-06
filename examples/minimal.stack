@@ -1,0 +1,9 @@
+{
+  "stack": "1.0",
+  "game": "mtg",
+  "cards": [
+    { "qty": 4, "name": "Lightning Bolt" },
+    { "qty": 2, "name": "Counterspell" },
+    { "qty": 1, "name": "Black Lotus" }
+  ]
+}

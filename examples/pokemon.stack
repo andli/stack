@@ -1,0 +1,16 @@
+{
+  "stack": "1.0",
+  "game": "pokemon",
+  "name": "Starter collection",
+  "cards": [
+    {
+      "qty": 1,
+      "name": "Pikachu",
+      "set": "sv1",
+      "number": "25",
+      "finish": "reverse_holo",
+      "id": { "pokemontcgio": "sv1-25" }
+    },
+    { "qty": 2, "name": "Charizard ex", "set": "sv3pt5", "number": "6" }
+  ]
+}
